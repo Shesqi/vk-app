@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from "../reducers";
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
@@ -17,6 +17,9 @@ import thunk from 'redux-thunk';
  * на каждый клик логгер пишет что было (prev state), что случилось (action), что стало (next state)
  */
 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger));
-// export const store = createStore(rootReducer, applyMiddleware(ping), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+export const store = createStore(
+  rootReducer,
+  composeEnhancer(applyMiddleware(thunk, logger))
+);

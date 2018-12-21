@@ -53,12 +53,6 @@ export class Page extends React.Component {
           <button className="btn" onClick={this.onBtnClick}>
             2009
           </button>{' '}
-          <button className="btn" onClick={this.onBtnClick}>
-            2008
-          </button>{' '}
-          <button className="btn" onClick={this.onBtnClick}>
-            2007
-          </button>{' '}
         </p>
         <h3>
           {year} год [{photos.length}]

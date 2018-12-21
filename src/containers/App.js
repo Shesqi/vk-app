@@ -36,6 +36,7 @@ const mapStateToProps = store => {
     page: store.page,
   }
 };
+// const mapStateToProps1 = ({user, page}) => ({user, page});
 
 const mapDispatchToProps = dispatch => {
   return {
